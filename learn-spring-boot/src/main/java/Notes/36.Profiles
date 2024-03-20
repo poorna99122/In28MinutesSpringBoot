@@ -1,0 +1,39 @@
+
+36.Profiles ->
+
+Dev
+Qa
+Stage
+Prod
+
+we can create seperate profile for these seperate environments 
+
+we can create seperate configurations for each of this profiles ...
+
+for example we have two profiles 
+
+dev 
+prod 
+
+In application.properties 
+-------------------------
+in my dev environment I dont want to print at debug level but at trace level I want... then 
+dev ->
+logging.level.org.springframework=trace
+But in prod level I want info level 
+prod ->
+logging.level.org.springframework=info
+
+So for this we need to create another application.properties file like application-dev.properties
+
+right now our app wont use any of these configurations ... in that case it will use the default 
+thing which is available in application.properties
+
+
+Now We want to configure prod profile -> 
+For that we need to mention in application.properties as below 
+spring.profiles.active = dev 
+
+
+
+

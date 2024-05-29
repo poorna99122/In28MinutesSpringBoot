@@ -1,0 +1,8 @@
+37. Configurations -
+	How we can setup complex configurations for our APP 
+	lets say we have currency service and we want to configure lot of values for that service 
+	like 
+	url 
+	username
+	key 
+	

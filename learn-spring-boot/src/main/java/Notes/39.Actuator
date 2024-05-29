@@ -1,0 +1,135 @@
+1.Monitor and manages your application in production
+2.Provides number of end points 
+	Beans 
+	Health 
+	Metrics
+	Mappings 
+	
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		
+	Whenever u hit the below url 
+	http://localhost:9090/actuator
+	
+	We can get response of  ->
+	
+	{
+  "_links": {
+    "self": {
+      "href": "http://localhost:9090/actuator",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:9090/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:9090/actuator/health/{*path}",
+      "templated": true
+    }
+  }
+}
+	
+	
+	If we want more features from actuator we need to enable from application.properties
+	like below 
+	management.endpoints.web.exposure.include=*
+	
+	Response - >
+	
+	{
+  "_links": {
+    "self": {
+      "href": "http://localhost:9090/actuator",
+      "templated": false
+    },
+    "beans": {
+      "href": "http://localhost:9090/actuator/beans",
+      "templated": false
+    },
+    "caches-cache": {
+      "href": "http://localhost:9090/actuator/caches/{cache}",
+      "templated": true
+    },
+    "caches": {
+      "href": "http://localhost:9090/actuator/caches",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:9090/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:9090/actuator/health/{*path}",
+      "templated": true
+    },
+    "info": {
+      "href": "http://localhost:9090/actuator/info",
+      "templated": false
+    },
+    "conditions": {
+      "href": "http://localhost:9090/actuator/conditions",
+      "templated": false
+    },
+    "configprops": {
+      "href": "http://localhost:9090/actuator/configprops",
+      "templated": false
+    },
+    "configprops-prefix": {
+      "href": "http://localhost:9090/actuator/configprops/{prefix}",
+      "templated": true
+    },
+    "env": {
+      "href": "http://localhost:9090/actuator/env",
+      "templated": false
+    },
+    "env-toMatch": {
+      "href": "http://localhost:9090/actuator/env/{toMatch}",
+      "templated": true
+    },
+    "loggers": {
+      "href": "http://localhost:9090/actuator/loggers",
+      "templated": false
+    },
+    "loggers-name": {
+      "href": "http://localhost:9090/actuator/loggers/{name}",
+      "templated": true
+    },
+    "heapdump": {
+      "href": "http://localhost:9090/actuator/heapdump",
+      "templated": false
+    },
+    "threaddump": {
+      "href": "http://localhost:9090/actuator/threaddump",
+      "templated": false
+    },
+    "metrics": {
+      "href": "http://localhost:9090/actuator/metrics",
+      "templated": false
+    },
+    "metrics-requiredMetricName": {
+      "href": "http://localhost:9090/actuator/metrics/{requiredMetricName}",
+      "templated": true
+    },
+    "scheduledtasks": {
+      "href": "http://localhost:9090/actuator/scheduledtasks",
+      "templated": false
+    },
+    "mappings": {
+      "href": "http://localhost:9090/actuator/mappings",
+      "templated": false
+    }
+  }
+}
+
+
+-------------------------
+
+Specifically if you want to configure some endpoints then u can specify like below 
+
+		management.endpoints.web.exposure.include=health,metrics
+	

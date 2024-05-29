@@ -1,0 +1,15 @@
+Introduction to maven -> 
+There are two popular build tools which are used in spring boot 
+	1.Maven 
+	2.Gradle 
+	
+	Maven -
+		Things maven can do -
+			Create New Projects 
+			Manage Dependencies and their versions 
+			Build Jar 
+			Run your application locally like tomcat, jetty etc...
+			Run Unit tests 
+			Deploy to test environment 
+			
+			Maven will help you to do all these and more 
